@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- start of adding event listeners demo -->
+
+    <button>Click me - adding event listeners!</button>
+    <script>
+        function buttonClick() {
+            console.log("Button was clicked!");
+        }
+        let button = document.querySelector("button");
+        button.addEventListener("click", buttonClick);
+
+        // NOTE: removing an event listener -> uncomment the line below to remove an event listener
+        //button.removeEventListener("click", buttonClick);
+    </script>
+
+
+    <!-- start of preventing default events demo -->
+    <br><br>
+    <a href="#">Leave this page!</a>
+    <script>
+        let link = document.querySelector("a");
+        link.addEventListener("click", event => {
+            event.preventDefault();
+            alert("You're not going anywhere!");
+        });
+    </script>
+
+    <!-- start of preventing default events demo -->
+    <!-- NOTE: might require to run this page using vs code for middle button and right button to function -->
+    <br><br>
+
+    <button id="button2">Click me any way you want</button>
+    <script>
+        let button2 = document.getElementById("button2");
+
+        button2.addEventListener("mousedown", event => {
+            if (event.button == 0) {
+                console.log("Left button");
+            } else if (event.button == 1){
+                console.log("Middle button");
+            } else if (event.button == 2){
+                console.log("Right button");
+            }
+        });
+    </script>
+    <br><br>
+    <p>Press a on your keyboard</p>
+    <p>Now, press b</p>
+    <p>Lastly, press any key</p>
+
+    <script>
+    	const keydownEvent = event => {
+        	if (event.key == "a") {
+        	    event.preventDefault();
+        	    alert("you pressed the 'a' key!");
+        	} else if (event.key == "b") {
+        	    event.preventDefault();
+        	    alert("you pressed the 'b' key!");
+        	} else {
+        	    event.preventDefault();
+        	    alert("you pressed some other key!");
+        	}
+        };
+        window.addEventListener("keydown", keydownEvent);
+    </script>
+    
+</body>
+</html>
