@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage Demo</title>
+</head>
+<body>
+    <h1 id="greeting">Hello&nbsp;</h1>
+    <p>Looks like you are <span id="age"></span> years old and your hobbies include: <span id="hobbies"></span>!</p>
+    <script>
+        let greeting = document.getElementById("greeting");
+        let age = document.getElementById("age");
+        let hobbies = document.getElementById("hobbies");
+
+        //sessionStorage are forgotten at the end of each session
+        // sessionStorage.setItem("name", "Jonathan");
+        // sessionStorage.setItem("age", 38);
+        // sessionStorage.setItem("hobbies", "reading, playing guitar, software development, and travel");
+
+        greeting.innerText += sessionStorage.getItem("name");
+        age.innerText = sessionStorage.getItem("age");
+        hobbies.innerText = sessionStorage.getItem("hobbies");
+    </script>
+</body>
+</html>

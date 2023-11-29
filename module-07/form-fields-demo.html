@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Fields Demo</title>
+</head>
+<body>
+    <form>
+        <p><input type="text" value="abc"> (text)</p>
+        <p><textarea name="textarea" id="textarea"> (textarea)</textarea></p>
+        <p><input type="password" value="abc"> (password)</p>
+        <p><input type="checkbox" checked> (checkbox)</p>
+        <p><input type="radio" value="A" name="choice">
+        <input type="radio" value="B" name="choice" checked>
+        <input type="radio" value="C" name="choice"> (radio)</p>
+        <label for="favcolor">Select your favorite color:</label>
+        <input type="color" id="favcolor" name="favcolor" value="#ff0000">      
+        <p><input type="file"> (file)</p>
+        <button for="button">Submit</button>
+    </form>
+        <script>
+            let textInput = document.getElementById("textarea");
+            let form = document.querySelector("form");
+            form.addEventListener("submit", event => {
+                event.preventDefault();
+                console.log(textInput.value);
+            });
+        </script>
+</body>
+</html>
