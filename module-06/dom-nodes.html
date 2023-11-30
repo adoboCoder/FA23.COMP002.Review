@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DOM (Document Object Model)</h1>
+    <blockquote>The Document Object Model (DOM) connects web pages to scripts or programming languages by representing the structure of a document—such as the HTML representing a web page—in memory. Usually it refers to JavaScript, even though modeling HTML, SVG, or XML documents as objects are not part of the core JavaScript language.</blockquote>
+    <blockquote>The DOM represents a document with a logical tree. Each branch of the tree ends in a node, and each node contains objects. DOM methods allow programmatic access to the tree. With them, you can change the document's structure, style, or content.</blockquote>
+    <blockquote>Nodes can also have event handlers attached to them. Once an event is triggered, the event handlers get executed.</blockquote>
+    <em>Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank">MDN Web Docs</a></em>
+
+    <hr>
+    <p id="querySelectorExample1">querySelectorExample 1</p>
+    <p id="querySelectorExample2">querySelectorExample 2</p>
+    <p id="querySelectorExample3">querySelectorExample 3</p>
+    <p class="querySelectorExample4">querySelectorExample 4</p>
+
+    <script>
+        window.onload(runAll());
+
+        function runAll() {
+            runQs();
+        }
+
+        function runQs() {
+            const qs = document.querySelector("p"); // querySelector targets the matching id
+            /*
+             *  The Document method querySelector() returns the first Element within the document that 
+             *  matches the specified selector, or group of selectors. If no matches are found, null is returned.
+            */
+            qs.style.backgroundColor = "red"; // changes the css background color
+
+            const qs3 = document.querySelector("#querySelectorExample3"); // querySelector targets the matching id
+            qs3.style.color = "pink"; // changes the css text color
+            
+            const qs4 = document.querySelector(".querySelectorExample4"); // querySelector targets the matching class
+            qs4.style.cssText = "background-color:green;color:yellow"; // changes the INLINE css value of the element
+        }
+
+    </script>
+</body>
+</html>
