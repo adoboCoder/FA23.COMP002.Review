@@ -13,16 +13,25 @@
     <em>Reference: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank">MDN Web Docs</a></em>
 
     <hr>
+    <h2>querySelector()</h2>
     <p id="querySelectorExample1">querySelectorExample 1</p>
     <p id="querySelectorExample2">querySelectorExample 2</p>
     <p id="querySelectorExample3">querySelectorExample 3</p>
     <p class="querySelectorExample4">querySelectorExample 4</p>
+
+    <br>
+    <h2>querySelectorAll()</h2>
+    <em>note: returns an array</em>
+    <div class="querySelectorAllExample">querySelectorAllExample 1</div>
+    <div class="querySelectorAllExample">querySelectorAllExample 2</div>
+    <div class="querySelectorAllExample">querySelectorAllExample 3</div>
 
     <script>
         window.onload(runAll());
 
         function runAll() {
             runQs();
+            runQsa();
         }
 
         function runQs() {
@@ -38,6 +47,15 @@
             
             const qs4 = document.querySelector(".querySelectorExample4"); // querySelector targets the matching class
             qs4.style.cssText = "background-color:green;color:yellow"; // changes the INLINE css value of the element
+        }
+
+        function runQsa(){
+            const qsa = document.querySelectorAll(".querySelectorAllExample"); // targets all elements matching the class
+            // traversing through each element
+            qsa.forEach((item) => {
+                item.style.backgroundColor = "navy";
+                item.style.color = "white";
+            });
         }
 
     </script>
